@@ -25,7 +25,7 @@ const Search: React.FC = () => {
             const data = await response.json();
             setResults(data);
         } catch (error) {
-            console.error("Error fetching search results:", error);
+            console.error('Error fetching search results:', error);
             setResults([]); // Clear results if an error occurs
         }
     };
@@ -49,21 +49,51 @@ const Search: React.FC = () => {
     };
 
     return (
-        <div>
+        <div style={{ padding: '20px' }}>
+            {/* Search Input */}
             <input
                 type="text"
-                placeholder="Search products..."
+                placeholder="What are you looking for .."
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
+                style={{ padding: '8px', width: '100%', marginBottom: '20px', boxSizing: 'border-box' }}
             />
-            <div>
-                {results.map(product => (
-                    <div key={product.id} onClick={() => handleProductClick(product.id)} style={{ cursor: 'pointer', marginBottom: '10px' }}>
-                        <h3>{product.name}</h3>
-                        <p>{product.category} - ${product.price.toFixed(2)}</p>
-                    </div>
-                ))}
-            </div>
+
+            {/* Table for displaying search results */}
+            <table style={{ width: '100%', borderCollapse: 'collapse' }}>
+                <thead>
+                    <tr>
+                        <th style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'left' }}>Name</th>
+                        <th style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'left' }}>Category</th>
+                        <th style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'right' }}>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {results.length > 0 ? (
+                        results.map(product => (
+                            <tr
+                                key={product.id}
+                                onClick={() => handleProductClick(product.id)}
+                                style={{ cursor: 'pointer', backgroundColor: '#f9f9f9', borderBottom: '1px solid #ddd' }}
+                                onMouseOver={(e) => (e.currentTarget.style.backgroundColor = '#f1f1f1')}
+                                onMouseOut={(e) => (e.currentTarget.style.backgroundColor = '#f9f9f9')}
+                            >
+                                <td style={{ border: '1px solid #ddd', padding: '10px' }}>{product.name}</td>
+                                <td style={{ border: '1px solid #ddd', padding: '10px' }}>{product.category}</td>
+                                <td style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'right' }}>
+                                    ${product.price.toFixed(2)}
+                                </td>
+                            </tr>
+                        ))
+                    ) : (
+                        <tr>
+                            <td colSpan={3} style={{ padding: '10px', textAlign: 'center' }}>
+                                No results found
+                            </td>
+                        </tr>
+                    )}
+                </tbody>
+            </table>
         </div>
     );
 };
