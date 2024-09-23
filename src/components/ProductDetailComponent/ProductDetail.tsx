@@ -23,12 +23,16 @@ const ProductDetail: React.FC = () => {
     if (!product) return <div>Loading...</div>;
 
     return (
-        <div>
-            <h1>{product.name}</h1>
-            <p>{product.category}</p>
-            <p>{product.description}</p>
-            <p>${product.price}</p>
-            <img src={product.imageUrl} alt={product.name} />
+        <div className="product-detail-container">
+            <div className="product-image">
+                <img src={product.imageUrl} alt={product.name} />
+            </div>
+            <div className="product-info">
+                <h1 className="product-name">{product.name}</h1>
+                <p className="product-category">{product.category}</p>
+                <p className="product-description">{product.description}</p>
+                <p className="product-price">${product.price.toFixed(2)}</p>
+            </div>
         </div>
     );
 };

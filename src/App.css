@@ -28,6 +28,57 @@
   color: #61dafb;
 }
 
+.product-detail-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 900px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.product-image img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.product-info {
+  flex: 1;
+  margin-left: 20px;
+}
+
+.product-name {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-category {
+  font-size: 1.2rem;
+  color: #888;
+  margin-bottom: 20px;
+}
+
+.product-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
