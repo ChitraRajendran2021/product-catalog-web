@@ -50,7 +50,6 @@ const Search: React.FC = () => {
 
     return (
         <div style={{ padding: '20px' }}>
-            {/* Search Input */}
             <input
                 type="text"
                 placeholder="What are you looking for .."
@@ -59,7 +58,6 @@ const Search: React.FC = () => {
                 style={{ padding: '8px', width: '100%', marginBottom: '20px', boxSizing: 'border-box' }}
             />
 
-            {/* Table for displaying search results */}
             <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                 <thead>
                     <tr>
