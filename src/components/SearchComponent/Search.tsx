@@ -81,7 +81,7 @@ const Search: React.FC = () => {
                                 <td style={{ border: '1px solid #ddd', padding: '10px' }}>{product.name}</td>
                                 <td style={{ border: '1px solid #ddd', padding: '10px' }}>{product.category}</td>
                                 <td style={{ border: '1px solid #ddd', padding: '10px', textAlign: 'right' }}>
-                                    ${product.price.toFixed(2)}
+                                    {product.price.toFixed(2)} kr
                                 </td>
                             </tr>
                         ))

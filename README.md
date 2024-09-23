@@ -1,16 +1,18 @@
+## This application is interface to search and display products.
+
 ## Prerequisites
 - **Docker** (for containerized deployment)
 - **Node.js** (if building locally, recommended version is 18)
 
-## STEP1 : Clone the repository:
+### STEP1 : Clone the repository:
 git clone git@github.com:ChitraRajendran2021/product-catalog-web.git
 
 ### STEP2 : Move to the base directory
 cd product-catalog-web
 
-## Building the Application
+### Building the Application
 
-## STEP3 : Local Build:
+### STEP3 : Local Build:
 ### Execute the below commands
    npm install
       npm run build
@@ -25,5 +27,5 @@ cd product-catalog-web
    docker run -p 80:80 product-catalog-web
    http://localhost/ or http://localhost:80
   
-## Stopping the Application
+### Stopping the Application
 docker stop <container_id>
